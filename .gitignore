@@ -1,2 +1,5 @@
+# Downloaded Packages
+node_modules
+
 # Local History
-/.history
+.history
