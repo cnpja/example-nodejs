@@ -1,4 +1,5 @@
-# Downloaded Packages
+# Cache and Dependancies
+__pycache__
 node_modules
 
 # Local History
