@@ -9,8 +9,9 @@ Este repositório contém exemplos de utilização de nossa API de consultas ao 
 ## Node.js
 
 - [Axios](node-js/axios)
+- [Request](node-js/request)
 
 
 ## Python
 
-_soon_
+- [Request](python/requests)
