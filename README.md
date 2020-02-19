@@ -2,6 +2,10 @@
 
 Este repositório contém exemplos de utilização de nossa API de consultas ao CNPJ.
 
+## Collections
+
+- [Postman](collections)
+
 ## Excel
 
 - [Power Query](excel)

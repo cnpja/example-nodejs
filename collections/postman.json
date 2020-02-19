@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "cea14f94-1185-48af-b862-e6fa88ca44b4",
+		"name": "CNPJá - Public",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Arquivos",
+			"item": [
+				{
+					"name": "Baixa Arquivo pelo UUID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cnpja_host}}/files/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.pdf",
+							"host": [
+								"{{cnpja_host}}"
+							],
+							"path": [
+								"files",
+								"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.pdf"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Empresas",
+			"item": [
+				{
+					"name": "Retorna Empresa pelo CNPJ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{cnpja_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{cnpja_host}}/companies/60746948000112",
+							"host": [
+								"{{cnpja_host}}"
+							],
+							"path": [
+								"companies",
+								"60746948000112"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Busca Empresa por Parâmetros",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{cnpja_api_key}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tax_ids\": [\n        \"00000000000191\",\n        \"33000167000101\",\n        \"60746948000112\"\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cnpja_host}}/companies/search",
+							"host": [
+								"{{cnpja_host}}"
+							],
+							"path": [
+								"companies",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4629620b-be3d-4b9f-8d2e-cf188102a5ad",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a04f8c0-dd27-48d0-9a3f-82ce55302ea7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
