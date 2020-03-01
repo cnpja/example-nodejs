@@ -25,6 +25,8 @@
   - [Activity](#activity)
   - [Member](#member)
   - [Role](#role)
+  - [SINTEGRA](#sintegra)
+  - [State Registration](#state-registration)
   - [Files](#files)
   - [Error](#error)
 
