@@ -44,7 +44,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{cnpja_host}}/companies/60746948000112?company_max_age=1&simples_max_age=30",
+							"raw": "{{cnpja_host}}/companies/60746948000112?company_max_age=1&sintegra_max_age=7&simples_max_age=30",
 							"host": [
 								"{{cnpja_host}}"
 							],
@@ -56,6 +56,10 @@
 								{
 									"key": "company_max_age",
 									"value": "1"
+								},
+								{
+									"key": "sintegra_max_age",
+									"value": "7"
 								},
 								{
 									"key": "simples_max_age",

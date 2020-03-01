@@ -45,6 +45,7 @@
 Nossa consulta ao CNPJ visa retornar dados das seguintes fontes em uma requisição unificada:
 - Receita Federal
 - Simples Nacional
+- SINTEGRA
 - IBGE (municípios)
 
 
@@ -111,13 +112,15 @@ Por padrão, requisições em Tempo Real, consomem uma quantidade maior de seus 
 Utilize os parâmetros a seguir para configurar a consulta da maneira que melhor o atenda.
 
 Se todos forem omitidos, nossa consulta padrão é:
-- Dados da inscrição no CNPJ em Tempo Real
+- Dados da Receita Federal Tempo Real
 - Dados do Simples Nacional do Cache
+- Dados do SINTEGRA do Cache
 
 Parâmetro | Padrão | Descrição
 :-- | :-- | :--
 company_max_age | 1 | Idade máxima em dias para retornar dados da empresa do Cache
 simples_max_age | null | Idade máxima em dias para retornar dados do Simples do Cache
+sintegra_max_age | null | Idade máxima em dias para retornar dados do SINTEGRA
 
 **Exemplos**:
 ```
@@ -129,6 +132,9 @@ https://api.cnpja.com.br/companies/00000000000191?simples_max_age=1
 
 # Aceitar Cache do CNPJ de até um mês atrás e do Simples de até uma semana:
 https://api.cnpja.com.br/companies/00000000000191?company_max_age=30&simples_max_age=7
+
+# Consultar CNPJ em Tempo Real, Simples Nacional em Tempo Real e SINTEGRA em Tempo Real:
+https://api.cnpja.com.br/companies/00000000000191?simples_max_age=1&sintegra_max_age=1
 ```
 
 ## Retornos Esperados
@@ -139,7 +145,7 @@ Requisição realizada com sucesso.
 
 ```
 {
-  "last_update": "2020-02-26T23:52:50.000Z",
+  "last_update": "2020-03-01T06:08:51.682Z",
   "name": "PETROLEO BRASILEIRO S A PETROBRAS",
   "alias": "PETROBRAS",
   "tax_id": "33000167000101",
@@ -164,8 +170,8 @@ Requisição realizada com sucesso.
     "zip": "20031170",
     "neighborhood": "CENTRO",
     "city": "RIO DE JANEIRO",
-    "city_ibge": "3304557",
     "state": "RJ",
+    "city_ibge": "3304557",
     "state_ibge": "33"
   },
   "legal_nature": {
@@ -173,6 +179,7 @@ Requisição realizada com sucesso.
     "description": "Sociedade de Economia Mista"
   },
   "simples_nacional": {
+    "last_update": "2020-03-01T06:08:50.982Z",
     "simples_optant": false,
     "simples_included": null,
     "simples_excluded": null,
@@ -184,16 +191,16 @@ Requisição realizada com sucesso.
   },
   "secondary_activities": [
     {
-      "code": "4681801",
-      "description": "Comércio atacadista de álcool carburante, biodiesel, gasolina e demais derivados de petróleo, exceto lubrificantes, não realizado por transportador retalhista (T.R.R.)"
-    },
-    {
       "code": "0600001",
       "description": "Extração de petróleo e gás natural"
     },
     {
       "code": "3520401",
       "description": "Produção de gás; processamento de gás natural"
+    },
+    {
+      "code": "4681801",
+      "description": "Comércio atacadista de álcool carburante, biodiesel, gasolina e demais derivados de petróleo, exceto lubrificantes, não realizado por transportador retalhista (T.R.R.)"
     }
   ],
   "membership": [
@@ -261,8 +268,33 @@ Requisição realizada com sucesso.
       }
     }
   ],
+  "sintegra": {
+    "last_update": "2020-03-01T06:08:40.298Z",
+    "registrations": [
+      {
+        "number": "81281882",
+        "state": "RJ",
+        "enabled": true
+      },
+      {
+        "number": "748878600131",
+        "state": "DF",
+        "enabled": false
+      },
+      {
+        "number": "283058749",
+        "state": "MS",
+        "enabled": false
+      },
+      {
+        "number": "240026870",
+        "state": "RS",
+        "enabled": false
+      }
+    ]
+  },
   "files": {
-    "registration": "https://api.cnpja.com.br/files/6bd4911b-b841-41c7-ba7b-b51ab2839751.pdf"
+    "registration": "https://api.cnpja.com.br/files/bcf476e6-d531-4d0d-b12d-2070b33982cf.pdf"
   }
 }
 ```
@@ -368,7 +400,7 @@ Porém, é possível adicionarmos propriedades aos objetos já existentes, ou cr
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
-last_update | string | Estampa de tempo com fuso da última atualização
+last_update | string | Estampa de tempo da última atualização na Receita Federal
 name | string | Razão social
 alias | string | Nome fantasia
 tax_id | string | Número do CNPJ
@@ -386,7 +418,9 @@ simples_nacional | [Simples Nacional](#simples-nacional) | Dados do Simples Naci
 primary_activity | [Activity](#activity) | Atividade econômica primária
 secondary_activities | [Activity](#activity)[ ] | Atividades econômicas secundárias
 membership | [Member](#member)[ ] | Quadro de sócios e administradores (QSA)
+sintegra | [SINTEGRA](#sintegra) | Dados do SINTEGRA (Inscrição Estadual)
 files | [Files](#files) | Arquivos referentes a consulta
+
 
 ### Registration
 
@@ -413,6 +447,7 @@ city_ibge | string | Código IBGE do município
 state | string | Estado
 state_ibge | string | Código IBGE da UF
 
+
 ### Legal Nature
 
 Obedece a [Tabela de Natureza Jurídica](http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/tabelas-utilizadas-pelo-programa-cnpj/tabela-de-natureza-juridica-e-qualificacao-do-quadro-de-socios-e-administradores)
@@ -425,6 +460,13 @@ description | string | Descrição da natureza jurídica
 
 ### Simples Nacional
 
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+last_update | string | Estampa de tempo da última atualização no Simples Nacional
+simples_optant | boolan | Define a opção pelo Simples Nacional
+simples_included | string | Data de inclusão no Simples Nacional
+simples_excluded | string | Data de exclusão do Simples Nacional
+simei_optant | boolan | Define a opção pelo SIMEI
 
 
 ### Activity
@@ -436,12 +478,31 @@ Propriedade | Tipo | Descrição
 code | string | Código de 7 dígitos da atividade econômica
 description | string | Descrição da atividade econômica
 
+
 ### Member
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
 name | string | Nome completo do membro
 role | [Role](#role) | Qualificação do membro no quadro de sócios e administradores
+
+
+### SINTEGRA
+
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+last_update | string | Estampa de tempo da última atualização no SINTEGRA
+registrations | [State Registration](#state-registration)[ ] | Inscrições Estaduais da empresa
+
+
+### State Registration
+
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+number | string | Número da Inscrição Estadual
+state | string | Unidade Federal da inscrição
+enabled | boolean | Define se habilitada ou não
+
 
 ### Role
 
