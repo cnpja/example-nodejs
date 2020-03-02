@@ -1,3 +1,4 @@
+<?php
 $curl = curl_init();
 
 // Coloque aqui sua Chave de API
@@ -25,4 +26,16 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 curl_close($curl);
-echo $response;
+
+echo "Resposta da API: <br>" . $response . "<br><br>";
+   
+// Decodifica o JSON de retorno
+$company = json_decode($response);
+
+// Acessa as propriedades que desejar
+echo "Razão Social: " . $company->name . "<br>";
+echo "Nome Fantasia: " . $company->alias . "<br>";
+echo "Tipo: " . $company->type . "<br>";
+// etc...
+
+?>
