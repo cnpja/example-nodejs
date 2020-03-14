@@ -14,9 +14,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{cnpja_host}}/files/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.pdf",
+							"raw": "https://api.cnpja.com.br/files/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.pdf",
+							"protocol": "https",
 							"host": [
-								"{{cnpja_host}}"
+								"api",
+								"cnpja",
+								"com",
+								"br"
 							],
 							"path": [
 								"files",
@@ -33,77 +37,53 @@
 			"name": "Empresas",
 			"item": [
 				{
-					"name": "Consulta Empresa pelo CNPJ",
+					"name": "Consulta Unificada pelo CNPJ",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{cnpja_api_key}}",
+								"value": "<SUA-CHAVE-DE-API>",
+								"description": "Coloque aqui sua Chave de API encontrada na página Minha Conta de nosso portal",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "{{cnpja_host}}/companies/60746948000112?company_max_age=1&sintegra_max_age=7&simples_max_age=30",
+							"raw": "https://api.cnpja.com.br/companies/00000000000191?enable_cache_fallback=true&company_max_age=1",
+							"protocol": "https",
 							"host": [
-								"{{cnpja_host}}"
+								"api",
+								"cnpja",
+								"com",
+								"br"
 							],
 							"path": [
 								"companies",
-								"60746948000112"
+								"00000000000191"
 							],
 							"query": [
 								{
+									"key": "enable_cache_fallback",
+									"value": "true",
+									"description": "Se habilitado, quando uma consulta em Tempo Real apresentar erro, retornaremos o registro mais recente de nosso cache e status 202 ao invés de retornar erro 5xx na requisição."
+								},
+								{
 									"key": "company_max_age",
-									"value": "1"
+									"value": "1",
+									"description": "Habilita consulta a Receita Federal em Cache. O valor numérico representa a defasagem máxima em dias que você aceita dados cacheados. Se tivermos o dado em Cache, você receberá um desconto em créditos no custo da requisição."
 								},
 								{
 									"key": "sintegra_max_age",
-									"value": "7"
+									"value": "7",
+									"description": "Habilita consulta ao SINTEGRA em Tempo Real. O valor numérico representa a defasagem máxima em dias que você aceita dados cacheados. Se não tivermos o dado em Cache, ou se ele não atender a defasagem, uma consulta em Tempo Real será executada e o custo em créditos aumentará.",
+									"disabled": true
 								},
 								{
 									"key": "simples_max_age",
-									"value": "30"
+									"value": "30",
+									"description": "Habilita consulta ao Simples Nacional em Tempo Real. O valor numérico representa a defasagem máxima em dias que você aceita dados cacheados. Se não tivermos o dado em Cache, ou se ele não atender a defasagem, uma consulta em Tempo Real será executada e o custo em créditos aumentará.",
+									"disabled": true
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Busca Empresa por Parâmetros",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{cnpja_api_key}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"_comment\": \"Esta funcionalidade está em desenvolvimento e será nossa futura busca avançada de empresas por parâmetros. Por hora, sua única função é buscar várias empresas através de um array de CNPJs.\",\n\t\n    \"tax_ids\": [\n        \"00000000000191\",\n        \"33000167000101\",\n        \"60746948000112\"\n    ]\n}\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{cnpja_host}}/companies/search",
-							"host": [
-								"{{cnpja_host}}"
-							],
-							"path": [
-								"companies",
-								"search"
 							]
 						}
 					},
@@ -130,6 +110,81 @@
 							""
 						]
 					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "Minha Conta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<SUA-CHAVE-DE-API>",
+								"description": "Coloque aqui sua Chave de API encontrada na página Minha Conta de nosso portal",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.cnpja.com.br/me",
+							"protocol": "https",
+							"host": [
+								"api",
+								"cnpja",
+								"com",
+								"br"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Histórico de Requisições",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<SUA-CHAVE-DE-API>",
+								"description": "Coloque aqui sua Chave de API encontrada na página Minha Conta de nosso portal",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.cnpja.com.br/me/requests?start_date=2020-01-01&end_date=2020-01-31",
+							"protocol": "https",
+							"host": [
+								"api",
+								"cnpja",
+								"com",
+								"br"
+							],
+							"path": [
+								"me",
+								"requests"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2020-01-01",
+									"description": "Data inicial para pesquisar por requisições enviadas"
+								},
+								{
+									"key": "end_date",
+									"value": "2020-01-31",
+									"description": "Data final para pesquisar por requisições enviadas"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
