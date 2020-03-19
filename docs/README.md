@@ -11,18 +11,18 @@
 ### Consulta de CNPJs
 > `/companies/{cnpj}`
   * [Objetivo](#objetivo)
-  * [Requisição](#requisi--o)
+  * [Requisição](#requisiçãoo)
     + [Tempo Real e Cache](#tempo-real-e-cache)
-    + [Customização da Consulta](#customiza--o-da-consulta)
+    + [Customização da Consulta](#customização-da-consulta)
   * [Retornos Esperados](#retornos-esperados)
-    + [OK (200)](#ok--200-)
-    + [Accepted (202)](#accepted--202-)
-    + [Bad Request (400)](#bad-request--400-)
-    + [Unauthorized (401)](#unauthorized--401-)
-    + [Not Found (404)](#not-found--404-)
-    + [Too Many Requests (429)](#too-many-requests--429-)
-    + [Internal Server Error (500)](#internal-server-error--500-)
-    + [Service Unavailable (503)](#service-unavailable--503-)
+    + [OK (200)](#ok-200)
+    + [Accepted (202)](#accepted-202)
+    + [Bad Request (400)](#bad-request-400)
+    + [Unauthorized (401)](#unauthorized-401)
+    + [Not Found (404)](#not-found-404)
+    + [Too Many Requests (429)](#too-many-requests-429)
+    + [Internal Server Error (500)](#internal-server-error-500)
+    + [Service Unavailable (503)](#service-unavailable-503)
   * [Tipos de Objeto](#tipos-de-objeto)
     + [Company](#company)
     + [Registration](#registration)
@@ -40,25 +40,25 @@
 ### Dados do Usuário
 > `/me`
   * [Objetivo](#objetivo-1)
-  * [Requisição](#requisi--o-1)
+  * [Requisição](#requisição-1)
   * [Retornos Esperados](#retornos-esperados-1)
-    + [OK (200)](#ok--200--1)
+    + [OK (200)](#ok-200-1)
 
 ### Histórico de Requisições
 > `/me/requests`
   * [Objetivo](#objetivo-2)
-  * [Requisição](#requisi--o-2)
+  * [Requisição](#requisição-2)
   * [Retornos Esperados](#retornos-esperados-2)
-    + [OK (200)](#ok--200--2)
-    + [Unauthorized (401)](#unauthorized--401--1)
+    + [OK (200)](#ok-200-2)
+    + [Unauthorized (401)](#unauthorized-401-1)
 
 ### Download de Arquivos
 > `/files/{file_name}`
   * [Objetivo](#objetivo-3)
-  * [Requisição](#requisi--o-3)
+  * [Requisição](#requisição-3)
   * [Retornos Esperados](#retornos-esperados-3)
-    + [OK (200)](#ok--200--3)
-    + [Not Found (404)](#not-found--404--1)
+    + [OK (200)](#ok-200-3)
+    + [Not Found (404)](#not-found-404-1)
 
 
 
