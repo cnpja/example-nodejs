@@ -5,8 +5,8 @@
 <!-- generated with https://ecotrust-canada.github.io/markdown-toc/ -->
 
 ### Autorização
-  * [Método](#m-todo)
-  * [Utilização](#utiliza--o)
+  * [Método](#método)
+  * [Utilização](#utilização)
 
 ### Consulta de CNPJs
 > `/companies/{cnpj}`
