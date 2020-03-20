@@ -366,7 +366,7 @@ Ele indica que alguma consulta em Tempo Real falhou e o dado foi retornado do Ca
   // O objeto do serviço que falhou conterá uma estampa de tempo retroativa
   "sintegra": 
     "last_update": "2019-12-31T00:00:00.000Z",
-    "origin_state_registration": "81281882",
+    "home_state_registration": "81281882",
     "registrations": [
       {
         "number": "81281882",
