@@ -305,6 +305,7 @@ Requisição realizada com sucesso.
   },
   "sintegra": {
     "last_update": "2020-03-19T20:01:42.229Z",
+    "home_state_registration": "81281882",
     "registrations": [
       {
         "number": "748878600131",
@@ -594,6 +595,7 @@ role | [Role](#role) | Qualificação do membro no quadro de sócios e administr
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
 last_update | string | Estampa de tempo da última atualização no SINTEGRA
+home_state_registration | string | I.E. habilitada no estado de origem da empresa
 registrations | [State Registration](#state-registration)[ ] | Inscrições Estaduais da empresa
 
 
