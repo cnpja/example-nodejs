@@ -739,9 +739,12 @@ Chave de API incorreta.
 
 ## Objetivo
 
-Esta rota visa expôr uma URL pública e temporária para download de arquivos.
+Esta rota visa expôr uma URL pública para download de arquivos.
 
-Não requer autenticação através de Chave de API.
+Tenha cudiado ao compartilhar ou expor estes endereços.
+
+Embora a chamada não requira Chave de API, ela é vinculada a sua conta e você está sujeito a cobrança de créditos. 
+
 
 ## Requisição
 
