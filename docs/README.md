@@ -301,7 +301,8 @@ Requisição realizada com sucesso.
     }
   ],
   "files": {
-    "registration": "https://api.cnpja.com.br/files/125ede2c-7799-4cf3-9f5b-16ee45c86fa2.pdf"
+    "registration": "https://api.cnpja.com.br/files/eyJ1IjoiYmVjaGihYumNhZSIsInQiOjEsInRheElkIjoiMDAwMDAwMDAwMDAxOTEifQ",
+    "membership": "https://api.cnpja.com.br/files/eyJ1IjoiYmVjaGihYumNhZrIsInQiOjEsInRheElkIjoiMDAwMDAwMDAwMDAxOTEifQ"
   },
   "sintegra": {
     "last_update": "2020-03-19T20:01:42.229Z",
@@ -620,7 +621,8 @@ description | string | Descrição da qualificação
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
-registration | string | URL do Comprovante de Inscrição em PDF
+registration | string | Comprovante de Inscrição em PDF
+membership | string | Quadro de Sócios e Administradores em PDF
 
 
 ### Error
