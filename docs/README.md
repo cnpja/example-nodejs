@@ -741,7 +741,7 @@ Chave de API incorreta.
 
 Esta rota visa expôr uma URL pública para download de arquivos.
 
-Tenha cudiado ao compartilhar ou expor estes endereços.
+Tenha cuidado ao compartilhar ou exibir estes endereços.
 
 Embora a chamada não requira Chave de API, ela é vinculada a sua conta e você está sujeito a cobrança de créditos. 
 
