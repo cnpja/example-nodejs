@@ -28,13 +28,14 @@
     + [Registration](#registration)
     + [Address](#address)
     + [Legal Nature](#legal-nature)
-    + [Simples Nacional](#simples-nacional)
     + [Activity](#activity)
     + [Member](#member)
-    + [SINTEGRA](#sintegra)
-    + [State Registration](#state-registration)
+    + [Foreign Member](#foreign-member)
     + [Role](#role)
     + [Files](#files)
+    + [SINTEGRA](#sintegra)
+    + [State Registration](#state-registration)
+    + [Simples Nacional](#simples-nacional)
     + [Error](#error)
 
 ### Dados do Usuário
@@ -521,7 +522,7 @@ legal_nature | [Legal Nature](#legal-nature) | Natureza jurídica
 simples_nacional | [Simples Nacional](#simples-nacional) | Dados do Simples Nacional
 primary_activity | [Activity](#activity) | Atividade econômica primária
 secondary_activities | [Activity](#activity)[ ] | Atividades econômicas secundárias
-membership | [Member](#member)[ ] | Quadro de sócios e administradores (QSA)
+membership | ([Member](#member) \| [Foreign Member](#foreign-member))[ ] | Quadro de sócios e administradores (QSA)
 sintegra | [SINTEGRA](#sintegra) | Dados do SINTEGRA (Inscrição Estadual)
 files | [Files](#files) | Arquivos referentes a consulta
 
@@ -562,17 +563,6 @@ code | string | Código de 4 dígitos da natureza jurídica
 description | string | Descrição da natureza jurídica
 
 
-### Simples Nacional
-
-Propriedade | Tipo | Descrição
-:-- | :-- | :--
-last_update | string | Estampa de tempo da última atualização no Simples Nacional
-simples_optant | boolan | Define a opção pelo Simples Nacional
-simples_included | string | Data de inclusão no Simples Nacional
-simples_excluded | string | Data de exclusão do Simples Nacional
-simei_optant | boolan | Define a opção pelo SIMEI
-
-
 ### Activity
 
 Obedece os [Códigos CNAE do IBGE](https://cnae.ibge.gov.br/?view=estrutura&amp;tipo=cnae&amp;versao_classe=7.0.0&amp;versao_subclasse=9.1.0)
@@ -582,13 +572,38 @@ Propriedade | Tipo | Descrição
 code | string | Código de 7 dígitos da atividade econômica
 description | string | Descrição da atividade econômica
 
-
 ### Member
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
 name | string | Nome completo do membro
 role | [Role](#role) | Qualificação do membro no quadro de sócios e administradores
+
+
+### Foreign Member
+
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+home_country | string | País de origem do membro situado no exterior
+name | string | Nome completo do membro
+role | [Role](#role) | Qualificação do membro no quadro de sócios e administradores
+legal_rep | [Member](#member) | Representante legal do membro estrangeiro no Brasil
+
+
+### Role
+
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+code | string | Código de 2 dígitos da qualificação
+description | string | Descrição da qualificação
+
+
+### Files
+
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+registration | string | Comprovante de Inscrição em PDF
+membership | string | Quadro de Sócios e Administradores em PDF
 
 
 ### SINTEGRA
@@ -609,20 +624,15 @@ state | string | Unidade Federal da inscrição
 enabled | boolean | Define se habilitada ou não
 
 
-### Role
+### Simples Nacional
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
-code | string | Código de 2 dígitos da qualificação
-description | string | Descrição da qualificação
-
-
-### Files
-
-Propriedade | Tipo | Descrição
-:-- | :-- | :--
-registration | string | Comprovante de Inscrição em PDF
-membership | string | Quadro de Sócios e Administradores em PDF
+last_update | string | Estampa de tempo da última atualização no Simples Nacional
+simples_optant | boolan | Define a opção pelo Simples Nacional
+simples_included | string | Data de inclusão no Simples Nacional
+simples_excluded | string | Data de exclusão do Simples Nacional
+simei_optant | boolan | Define a opção pelo SIMEI
 
 
 ### Error
