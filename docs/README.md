@@ -53,7 +53,7 @@
     + [Unauthorized (401)](#unauthorized-401-1)
 
 ### Download de Arquivos
-> `/files/{file_name}`
+> `/files/{file_token}`
   * [Objetivo](#objetivo-3)
   * [Requisição](#requisição-3)
   * [Retornos Esperados](#retornos-esperados-3)
@@ -735,7 +735,7 @@ Chave de API incorreta.
 
 # Download de Arquivos
 
-> `/files/{file_name}`
+> `/files/{file_token}`
 
 ## Objetivo
 
@@ -751,12 +751,12 @@ Embora a chamada não requira Chave de API, ela é vinculada a sua conta e você
 Envie uma requisição `GET` para:
 
 ```
-https://api.cnpja.com.br/files/{files_name}
+https://api.cnpja.com.br/files/{file_token}
 ```
 
-Substitua o parâmetro `{file_name}` pelo UUID do arquivo seguido por sua extensão.
+Substitua o parâmetro `{file_token}` pelo código do arquivo.
 
-Não é necessário autenticação, você pode utilizar diretamente por um navegador.
+Não é necessário autenticação, você pode utilizar diretamente do navegador.
 
 
 ## Retornos Esperados
