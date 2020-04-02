@@ -29,8 +29,8 @@
     + [Address](#address)
     + [Legal Nature](#legal-nature)
     + [Activity](#activity)
-    + [Member](#member)
-    + [Foreign Member](#foreign-member)
+    + [Acting Member](#acting-member)
+    + [Assisted Member](#assisted-member)
     + [Role](#role)
     + [Files](#files)
     + [SINTEGRA](#sintegra)
@@ -426,7 +426,7 @@ Não foi possível autenticar sua requisição, certifique-se que:
 ```
 {
   "error": 401,
-  "message": "invalid api-key",
+  "message": "invalid authorization",
   "details": { }
 }
 ```
@@ -514,7 +514,8 @@ founded | string | Data de fundação em formato 'YYYY-MM-DD'
 size | string |  Porte da empresa (MEI, ME, EPP ou DEMAIS)
 capital | number | Valor declarado do capital social com até duas casas decimais
 email | string | E-mail
-phone | string | Telefone
+phone | string | Telefone principal
+phone_alt | string | Telefone alternativo
 federal_entity | string | Ente Federativo Responsável (EFR)
 registration | [Registration](#registration) | Infomações da situação cadastral
 address | [Address](#address) | Endereço detalhado
@@ -522,7 +523,7 @@ legal_nature | [Legal Nature](#legal-nature) | Natureza jurídica
 simples_nacional | [Simples Nacional](#simples-nacional) | Dados do Simples Nacional
 primary_activity | [Activity](#activity) | Atividade econômica primária
 secondary_activities | [Activity](#activity)[ ] | Atividades econômicas secundárias
-membership | ([Member](#member) \| [Foreign Member](#foreign-member))[ ] | Quadro de sócios e administradores (QSA)
+membership | ([Acting Member](#acting-member) \| [Assisted Member](#assisted-member))[ ] | Quadro de sócios e administradores (QSA)
 sintegra | [SINTEGRA](#sintegra) | Dados do SINTEGRA (Inscrição Estadual)
 files | [Files](#files) | Arquivos referentes a consulta
 
@@ -555,7 +556,7 @@ state_ibge | string | Código IBGE da UF
 
 ### Legal Nature
 
-Obedece a [Tabela de Natureza Jurídica](http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/tabelas-utilizadas-pelo-programa-cnpj/tabela-de-natureza-juridica-e-qualificacao-do-quadro-de-socios-e-administradores)
+Obedece a [Tabela de Natureza Jurídica](http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/tabelas-utilizadas-pelo-programa-cnpj/tabela-de-natureza-juridica-e-qualificacao-do-quadro-de-socios-e-administradores).
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
@@ -565,29 +566,35 @@ description | string | Descrição da natureza jurídica
 
 ### Activity
 
-Obedece os [Códigos CNAE do IBGE](https://cnae.ibge.gov.br/?view=estrutura&amp;tipo=cnae&amp;versao_classe=7.0.0&amp;versao_subclasse=9.1.0)
+Obedece os [Códigos CNAE do IBGE](https://cnae.ibge.gov.br/?view=estrutura&amp;tipo=cnae&amp;versao_classe=7.0.0&amp;versao_subclasse=9.1.0).
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
 code | string | Código de 7 dígitos da atividade econômica
 description | string | Descrição da atividade econômica
 
-### Member
+### Acting Member
+
+Sócio ou administrador que responde legalmente pela empresa.
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
-name | string | Nome completo do membro
-role | [Role](#role) | Qualificação do membro no quadro de sócios e administradores
+name | string | Nome completo ou razão social
+tax_id | string | CPF ou CNPJ (sujeito a censura)
+role | [Role](#role) | Qualificação no quadro de sócios
 
 
-### Foreign Member
+### Assisted Member
+
+Sócio ou administrador que possui participação mas não é o responsável legal.
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
-home_country | string | País de origem do membro situado no exterior
-name | string | Nome completo do membro
-role | [Role](#role) | Qualificação do membro no quadro de sócios e administradores
-legal_rep | [Member](#member) | Representante legal do membro estrangeiro no Brasil
+home_country | string | País de origem (apenas se situado no exterior)
+name | string | Nome completo ou razão social
+tax_id | string | CPF ou CNPJ (sujeito a censura)
+role | [Role](#role) | Qualificação no quadro de sócios
+legal_rep | [Acting Member](#acting-member) | Representante legal
 
 
 ### Role
@@ -677,12 +684,20 @@ Sua Chave de API deve estar presente na propriedade `Authorization` dos `Headers
   "status": "ACTIVE",
   "remaining_credits": 9321.8,
   "profile_picture": null,
-  "plan": {
-    "name": "PRO",
-    "price": 99,
-    "credits": 10000,
-    "reffils": "daily"
-  }
+  "subscriptions": [
+    {
+      "status": "ACTIVE",
+      "payment_method": "CREDIT_CARD",
+      "activated": "2020-03-24T10:42:08.000Z",
+      "plan": {
+        "name": "PRO",
+        "price": "99.00",
+        "credits": 10000,
+        "reffils": "DAILY",
+        "reccurence": "MONTHLY"
+      }
+    }
+  ]
 }
 ```
 
