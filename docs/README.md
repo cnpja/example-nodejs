@@ -590,9 +590,9 @@ Sócio ou administrador que possui participação mas não é o responsável leg
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
-home_country | string | País de origem (apenas se situado no exterior)
 name | string | Nome completo ou razão social
 tax_id | string | CPF ou CNPJ (sujeito a censura)
+home_country | string | País de origem (apenas se situado no exterior)
 role | [Role](#role) | Qualificação no quadro de sócios
 legal_rep | [Acting Member](#acting-member) | Representante legal
 
