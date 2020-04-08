@@ -32,10 +32,12 @@
     + [Acting Member](#acting-member)
     + [Assisted Member](#assisted-member)
     + [Role](#role)
-    + [Files](#files)
+    + [Partner](#partner)
     + [SINTEGRA](#sintegra)
     + [State Registration](#state-registration)
     + [Simples Nacional](#simples-nacional)
+    + [Files](#files)
+    + [Maps](#maps)
     + [Error](#error)
 
 ### Dados do Usuário
@@ -185,159 +187,171 @@ Requisição realizada com sucesso.
 
 ```
 {
-  "last_update": "2020-03-19T20:01:43.036Z",
-  "name": "PETROLEO BRASILEIRO S A PETROBRAS",
-  "alias": "PETROBRAS",
-  "tax_id": "33000167000101",
-  "type": "MATRIZ",
-  "founded": "1966-09-28",
-  "size": "DEMAIS",
-  "capital": 205431960490.52,
-  "email": "ATENDIMENTOFISCOSSCO@PETROBRAS.COM.BR",
-  "phone": "(21) 3224-8091/ (21) 3224-4477",
-  "federal_entity": "UNIÃO",
-  "registration": {
-    "status": "ATIVA",
-    "status_date": "2005-11-03",
-    "status_reason": null,
-    "special_status": null,
-    "special_status_date": null
-  },
-  "address": {
-    "street": "AV REPUBLICA DO CHILE",
-    "number": "65",
-    "details": null,
-    "zip": "20031170",
-    "neighborhood": "CENTRO",
-    "city": "RIO DE JANEIRO",
-    "state": "RJ",
-    "city_ibge": "3304557",
-    "state_ibge": "33"
-  },
-  "legal_nature": {
-    "code": "2038",
-    "description": "Sociedade de Economia Mista"
-  },
-  "primary_activity": {
-    "code": "1921700",
-    "description": "Fabricação de produtos do refino de petróleo"
-  },
-  "secondary_activities": [
-    {
-      "code": "0600001",
-      "description": "Extração de petróleo e gás natural"
+    "last_update": "2020-04-08T20:28:47.000Z",
+    "name": "PETROLEO BRASILEIRO S A PETROBRAS",
+    "alias": "PETROBRAS",
+    "tax_id": "33000167000101",
+    "type": "MATRIZ",
+    "founded": "1966-09-28",
+    "size": "DEMAIS",
+    "capital": 205431960490.52,
+    "email": "atendimentofiscossco@petrobras.com.br",
+    "phone": "(21) 3224-8091",
+    "phone_alt": "(21) 3224-4477",
+    "federal_entity": "UNIÃO",
+    "registration": {
+        "status": "ATIVA",
+        "status_date": "2005-11-03",
+        "status_reason": null,
+        "special_status": null,
+        "special_status_date": null
     },
-    {
-      "code": "3520401",
-      "description": "Produção de gás; processamento de gás natural"
-    },
-    {
-      "code": "4681801",
-      "description": "Comércio atacadista de álcool carburante, biodiesel, gasolina e demais derivados de petróleo, exceto lubrificantes, não realizado por transportador retalhista (T.R.R.)"
-    }
-  ],
-  "membership": [
-    {
-      "name": "EBERALDO DE ALMEIDA NETO",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    },
-    {
-      "name": "ROBERTO DA CUNHA CASTELLO BRANCO",
-      "role": {
-        "code": "16",
-        "description": "Presidente"
-      }
-    },
-    {
-      "name": "CARLOS ALBERTO PEREIRA DE OLIVEIRA",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    },
-    {
-      "name": "RUDIMAR ANDREIS LORENZATTO",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    },
-    {
-      "name": "ANELISE QUINTAO LARA",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    },
-    {
-      "name": "ANDREA MARQUES DE ALMEIDA",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    },
-    {
-      "name": "ROBERTO FURIAN ARDENGHY",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    },
-    {
-      "name": "MARCELO BARBOSA DE CASTRO ZENKNER",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    },
-    {
-      "name": "NICOLAS SIMONE",
-      "role": {
-        "code": "10",
-        "description": "Diretor"
-      }
-    }
-  ],
-  "files": {
-    "registration": "https://api.cnpja.com.br/files/eyJ1IjoiYmVjaGihYumNhZSIsInQiOjEsInRheElkIjoiMDAwMDAwMDAwMDAxOTEifQ",
-    "membership": "https://api.cnpja.com.br/files/eyJ1IjoiYmVjaGihYumNhZrIsInQiOjEsInRheElkIjoiMDAwMDAwMDAwMDAxOTEifQ"
-  },
-  "sintegra": {
-    "last_update": "2020-03-19T20:01:42.229Z",
-    "home_state_registration": "81281882",
-    "registrations": [
-      {
-        "number": "748878600131",
-        "state": "DF",
-        "enabled": false
-      },
-      {
-        "number": "283058749",
-        "state": "MS",
-        "enabled": false
-      },
-      {
-        "number": "81281882",
+    "address": {
+        "street": "AV REPUBLICA DO CHILE",
+        "number": "65",
+        "details": null,
+        "zip": "20031170",
+        "neighborhood": "CENTRO",
+        "city": "RIO DE JANEIRO",
         "state": "RJ",
-        "enabled": true
-      },
-      {
-        "number": "240026870",
-        "state": "RS",
-        "enabled": false
-      }
-    ]
-  },
-  "simples_nacional": {
-    "last_update": "2020-03-18T22:40:24.000Z",
-    "simples_optant": false,
-    "simples_included": null,
-    "simples_excluded": null,
-    "simei_optant": false
-  }
+        "city_ibge": "3304557",
+        "state_ibge": "33"
+    },
+    "legal_nature": {
+        "code": "2038",
+        "description": "Sociedade de Economia Mista"
+    },
+    "primary_activity": {
+        "code": "1921700",
+        "description": "Fabricação de produtos do refino de petróleo"
+    },
+    "secondary_activities": [
+        {
+            "code": "0600001",
+            "description": "Extração de petróleo e gás natural"
+        },
+        {
+            "code": "3520401",
+            "description": "Produção de gás; processamento de gás natural"
+        },
+        {
+            "code": "4681801",
+            "description": "Comércio atacadista de álcool carburante, biodiesel, gasolina e demais derivados de petróleo, exceto lubrificantes, não realizado por transportador retalhista (T.R.R.)"
+        }
+    ],
+    "membership": [
+        {
+            "name": "ROBERTO FURIAN ARDENGHY",
+            "tax_id": "***581500**",
+            "role": {
+                "code": "10",
+                "description": "Diretor"
+            }
+        },
+        {
+            "name": "EBERALDO DE ALMEIDA NETO",
+            "tax_id": "***109897**",
+            "role": {
+                "code": "10",
+                "description": "Diretor"
+            }
+        },
+        {
+            "name": "EBERALDO DE ALMEIDA NETO",
+            "tax_id": "***109897**",
+            "role": {
+                "code": "10",
+                "description": "Diretor"
+            }
+        },
+        {
+            "name": "ROBERTO FURIAN ARDENGHY",
+            "tax_id": "***581500**",
+            "role": {
+                "code": "10",
+                "description": "Diretor"
+            }
+        }
+    ],
+    "partnership": [
+        {
+            "name": "CONSORCIO PROJETO TERMOCEARA",
+            "alias": "CONSORCIO TERMOCEARA",
+            "tax_id": "05141091000107",
+            "founded": "2002-06-20",
+            "capital": null
+        },
+        {
+            "name": "CONSORCIO DA USINA TERMELETRICA DE IBIRITE",
+            "alias": null,
+            "tax_id": "03577255000100",
+            "founded": "1999-05-06",
+            "capital": null
+        },
+        {
+            "name": "CONSORCIO PROJETO TERMOCEARA",
+            "alias": null,
+            "tax_id": "05232025000134",
+            "founded": "2002-06-20",
+            "capital": null
+        },
+        {
+            "name": "CONSORCIO BC-20",
+            "alias": "CONSORCIO BC-20",
+            "tax_id": "05259140000100",
+            "founded": "2000-04-18",
+            "capital": null
+        },
+        {
+            "name": "CONSORCIO BCAM-40",
+            "alias": "CONSORCIO BCAM-40",
+            "tax_id": "05259144000180",
+            "founded": "2000-04-04",
+            "capital": null
+        }
+    ],
+    "simples_nacional": {
+        "last_update": "2020-04-08T20:26:45.000Z",
+        "simples_optant": false,
+        "simples_included": null,
+        "simples_excluded": null,
+        "simei_optant": false
+    },
+    "sintegra": {
+        "last_update": "2020-04-08T20:28:47.000Z",
+        "home_state_registration": "81281882",
+        "registrations": [
+            {
+                "number": "81281882",
+                "state": "RJ",
+                "enabled": true
+            },
+            {
+                "number": "0240026870",
+                "state": "RS",
+                "enabled": false
+            },
+            {
+                "number": "0748878600131",
+                "state": "DF",
+                "enabled": false
+            },
+            {
+                "number": "283058749",
+                "state": "MS",
+                "enabled": false
+            }
+        ]
+    },
+    "files": {
+        "registration": "https://api.cnpja.com.br/files/******************5IiwieCI6IjMzMDAwMTY3MDAwMTAxIiwidCI6IkNSIn0",
+        "membership": "https://api.cnpja.com.br/files/******************5IiwieCI6IjMzMDAwMTY3MDAwMTAxIiwidCI6IkNNIn0"
+    },
+    "maps": {
+        "roads": "https://api.cnpja.com.br/files/******************5IiwieCI6IjMzMDAwMTY3MDAwMTAxIiwidCI6IkdSIn0",
+        "satellite": "https://api.cnpja.com.br/files/******************5IiwieCI6IjMzMDAwMTY3MDAwMTAxIiwidCI6IkdTIn0",
+        "street": "https://api.cnpja.com.br/files/******************5IiwieCI6IjMzMDAwMTY3MDAwMTAxIiwidCI6IkdUIn0"
+    }
 }
 ```
 
@@ -512,7 +526,7 @@ tax_id | string | Número do CNPJ
 type | string | Tipo de empresa (MATRIZ ou FILIAL)
 founded | string | Data de fundação em formato 'YYYY-MM-DD'
 size | string |  Porte da empresa (MEI, ME, EPP ou DEMAIS)
-capital | number | Valor declarado do capital social com até duas casas decimais
+capital | number | Valor declarado do capital social com duas casas decimais
 email | string | E-mail
 phone | string | Telefone principal
 phone_alt | string | Telefone alternativo
@@ -523,10 +537,11 @@ legal_nature | [Legal Nature](#legal-nature) | Natureza jurídica
 simples_nacional | [Simples Nacional](#simples-nacional) | Dados do Simples Nacional
 primary_activity | [Activity](#activity) | Atividade econômica primária
 secondary_activities | [Activity](#activity)[ ] | Atividades econômicas secundárias
-membership | ([Acting Member](#acting-member) \| [Assisted Member](#assisted-member))[ ] | Quadro de sócios e administradores (QSA)
+membership | ([Acting](#acting-member)\|[Assisted](#assisted-member))[ ] | Quadro de sócios e administradores (QSA)
+partnership | [Partner](#partnership)[ ] | Empresas cuja consultada é sócia
 sintegra | [SINTEGRA](#sintegra) | Dados do SINTEGRA (Inscrição Estadual)
-files | [Files](#files) | Arquivos referentes a consulta
-
+files | [Files](#files) | Comprovantes em PDF da Consulta
+maps | [Maps](#maps) | Mapas e foto da rua em PNG
 
 ### Registration
 
@@ -605,12 +620,15 @@ code | string | Código de 2 dígitos da qualificação
 description | string | Descrição da qualificação
 
 
-### Files
+### Partner
 
 Propriedade | Tipo | Descrição
 :-- | :-- | :--
-registration | string | Comprovante de Inscrição em PDF
-membership | string | Quadro de Sócios e Administradores em PDF
+name | string | Razão social
+alias | string | Nome fantasia
+tax_id | string | Número do CNPJ
+founded | string | Data de fundação em formato 'YYYY-MM-DD'
+capital | number | Valor declarado do capital social com duas casas decimais
 
 
 ### SINTEGRA
@@ -640,6 +658,27 @@ simples_optant | boolan | Define a opção pelo Simples Nacional
 simples_included | string | Data de inclusão no Simples Nacional
 simples_excluded | string | Data de exclusão do Simples Nacional
 simei_optant | boolan | Define a opção pelo SIMEI
+
+
+### Files
+
+_Ao acessar estes links você está sujeito a cobrança de créditos._
+
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+registration | string | Comprovante de Inscrição em PDF
+membership | string | Quadro de Sócios e Administradores em PDF
+
+
+### Maps
+
+_Ao acessar estes links você está sujeito a cobrança de créditos._
+
+Propriedade | Tipo | Descrição
+:-- | :-- | :--
+roads | string | Mapa Aéreo 2D em PNG
+satellite | string | Mapa Visão Satélite em PNG
+street | string | Foto da Rua (Street View) em PNG
 
 
 ### Error
