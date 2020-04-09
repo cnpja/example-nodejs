@@ -538,7 +538,7 @@ simples_nacional | [Simples Nacional](#simples-nacional) | Dados do Simples Naci
 primary_activity | [Activity](#activity) | Atividade econômica primária
 secondary_activities | [Activity](#activity)[ ] | Atividades econômicas secundárias
 membership | ([Acting](#acting-member)\|[Assisted](#assisted-member))[ ] | Quadro de sócios e administradores (QSA)
-partnership | [Partner](#partnership)[ ] | Empresas cuja consultada é sócia
+partnership | [Partner](#partner)[ ] | Empresas cuja consultada é sócia
 sintegra | [SINTEGRA](#sintegra) | Dados do SINTEGRA (Inscrição Estadual)
 files | [Files](#files) | Comprovantes em PDF da Consulta
 maps | [Maps](#maps) | Mapas e foto da rua em PNG
