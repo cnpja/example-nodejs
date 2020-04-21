@@ -4,5 +4,9 @@
   "httpVersion": "HTTP/1.1",
   "headers": [
     { "name": "Authorization", "value": "*CHAVE-DE-API*" }
+  ],
+  "queryString": [
+    { "name": "sintegra_max_age", "value": "*SINTEGRA-IDADE-MAX*" },
+    { "name": "simples_max_age", "value": "*SIMPLES-IDADE-MAX*" }
   ]
 }
