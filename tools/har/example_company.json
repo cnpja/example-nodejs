@@ -1,8 +1,0 @@
-{
-  "method": "GET",
-  "url": "https://api.cnpja.com.br/companies/*CNPJ*",
-  "httpVersion": "HTTP/1.1",
-  "headers": [
-    { "name": "Authorization", "value": "*CHAVE-DE-API*" }
-  ]
-}

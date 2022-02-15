@@ -1,9 +1,27 @@
-# CNPJá! - API de Consultas ao CNPJ
+# CNPJá! - Consulta CNPJ via Node.js
 
-Este repositório contém todos os arquivos de suporte a nossa API incluindo:
+Este repositório fornece um exemplo de como integrar a nossa API de consulta CNPJ a Receita Federal, Simples Nacional e Cadastro de Contribuintes via Node.js.
 
-[Documentação Oficial](docs)
+## Instruções
 
-[Exemplos de Utilização](examples)
+1\. Clone o repositório:
 
-[Ferramentas de Consulta](tools)
+```
+git clone https://github.com/cnpja/example-nodejs.git
+```
+
+2\. Substitua a variável `apiKey` no arquivo `cnpja.js` com sua Chave de API, caso ainda não tenha conta crie gratuitamente em:
+
+[CNPJá! - Minha Conta](https://www.cnpja.com/me)
+
+3\. Instale as dependências:
+
+```
+npm install
+```
+
+4\. Execute via Node.js para testar:
+
+```
+npm start
+```

@@ -1,0 +1,21 @@
+{
+  "name": "example-nodejs",
+  "version": "1.0.0",
+  "description": "CNPJá! - Consulta CNPJ via Node.js",
+  "main": "cnpja.js",
+  "license": "MIT",
+  "author": {
+    "name": "CNPJá!",
+    "email": "contato@cnpja.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cnpja/example-nodejs"
+  },
+  "scripts": {
+    "start": "node cnpja.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
+  }
+}

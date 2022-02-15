@@ -5,7 +5,7 @@ const apiKey = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-xxxxxxxx-xxxx-xxxx-xxxx-xxx
 
 // Cria uma instância do Axios para a API CNPJá!
 const cnpja = axios.create({
-  baseURL: 'https://api.cnpja.com.br',
+  baseURL: 'https://api.cnpja.com',
   headers: { authorization: apiKey },
 });
 
@@ -17,7 +17,7 @@ const cnpja = axios.create({
 async function getCompany(taxId) {
   const { data: company } = await cnpja({
     method: 'get',
-    url: `/companies/${taxId ? taxId.toString().replace(/\D+/g, '') : null}`,
+    url: `/office/${taxId ? taxId.toString().replace(/\D+/g, '') : null}`,
   });
   return company;
 }
